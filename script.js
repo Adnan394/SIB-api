@@ -1,6 +1,6 @@
 $(".movie-search").on("click", function () {
   $.ajax({
-    url: "http://www.omdbapi.com/?apikey=df8865f1&s=" + $(".input-movie").val(),
+    url: "https://www.omdbapi.com/?apikey=df8865f1&s=" + $(".input-movie").val(),
     success: (result) => {
       const movies = result.Search;
       let cards = "";
@@ -12,7 +12,7 @@ $(".movie-search").on("click", function () {
 
       $(".modal-toggle-button").on("click", function () {
         $.ajax({
-          url: "http://www.omdbapi.com/?apikey=df8865f1&i=" + $(this).data("imdbid"),
+          url: "https://www.omdbapi.com/?apikey=df8865f1&i=" + $(this).data("imdbid"),
           success: (m) => {
             const movieDetail = showMovieDetail(m);
             $(".modal-body").html(movieDetail);
